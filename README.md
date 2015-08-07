@@ -52,3 +52,5 @@ search inside a path like this one, depending on you maven version:
 
 - Project -> Properties -> Maven -> Active Maven Profiles
   `liferay-dev`
+
+- Project -> Build Automatically (checked)
