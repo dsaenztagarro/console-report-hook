@@ -3,7 +3,12 @@
 # Environment
 
 - maven 3.3.3
-- IDE: Eclipse Luna Release 4.4.0
+- Liferay IDE: Eclipse Luna Release 4.4.0
+
+**Important!**
+
+In order to run server from IDE, remember to update `Liferay settings` with `User timezone:`
+An invalid config doesn't play well with JRebel in order to monitor changes!
 
 # Maven configuration
 
