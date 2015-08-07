@@ -8,11 +8,6 @@
 
 	<web>
 		<link target="/">
-			<dir name="/Users/dst/Development/workspace_liferay/script-utils/target/m2e-wtp/web-resources">
-				<exclude name="/"/>
-			</dir>
-		</link>
-		<link target="/">
 			<dir name="/Users/dst/Development/workspace_liferay/script-utils/src/main/webapp">
 			</dir>
 		</link>

@@ -25,7 +25,7 @@ variables of `pom.xml`.
         <plugin.type>portlet</plugin.type>
         <liferay.version>6.2.0-ga1</liferay.version>
         <liferay.maven.plugin.version>6.2.0-ga1</liferay.maven.plugin.version>
-        <liferay.auto.deploy.dir>{liferay.portal.dir}/deploy</liferay.auto.deploy.dir>
+        <liferay.auto.deploy.dir>${liferay.portal.dir}/deploy</liferay.auto.deploy.dir>
         <liferay.app.server.deploy.dir>${liferay.app.server.dir}/webapps</liferay.app.server.deploy.dir>
         <liferay.app.server.lib.global.dir>${liferay.app.server.dir}/lib/ext</liferay.app.server.lib.global.dir>
         <liferay.app.server.portal.dir>${liferay.app.server.dir}/webapps/ROOT</liferay.app.server.portal.dir>
