@@ -1,5 +1,6 @@
 package com.liferay.challenge;
 
+import com.liferay.challenge.log.LogConstants;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 
@@ -18,5 +19,6 @@ public class ScriptUtilImpl implements ScriptUtil {
         return "Hello " + name + "!"; 
 	}
 	
-	private static Log _log = LogFactoryUtil.getLog(ScriptUtilImpl.class); 
+	private static Log _log = LogFactoryUtil.getLog(LogConstants.LOG_CATEGORY); 
+
 }
