@@ -1,6 +1,6 @@
-myUtil = com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate(
-	"script-utils-1.0.0-SNAPSHOT", "com.liferay.challenge.ScriptUtil")
+command = com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate(
+	"script-utils-1.0.0-SNAPSHOT", "com.liferay.challenge.command.CatastropheCommand")
 
-println(myUtil.operationOne())
+command.setPortletConfig(portletConfig);
 
-println(myUtil.operationTwo("Joe Bloggs"))
+println(command.run())
