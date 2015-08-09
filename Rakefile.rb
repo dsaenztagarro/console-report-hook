@@ -15,7 +15,7 @@ namespace :liferay do
   end
 
   desc 'Build service'
-  task :build-service do
+  task :buildservice do
     sh 'mvn liferay:build-service'
   end
 end
