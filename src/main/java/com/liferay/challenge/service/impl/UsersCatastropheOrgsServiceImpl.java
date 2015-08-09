@@ -1,6 +1,21 @@
 package com.liferay.challenge.service.impl;
 
+import java.util.List;
+
+import com.liferay.challenge.model.UsersCatastropheOrgs;
 import com.liferay.challenge.service.base.UsersCatastropheOrgsServiceBaseImpl;
+import com.liferay.portal.kernel.dao.orm.DynamicQuery;
+import com.liferay.portal.kernel.dao.orm.DynamicQueryFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.OrderFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
+import com.liferay.portal.kernel.dao.orm.ProjectionList;
+import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
+import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
+import com.liferay.portlet.asset.model.AssetEntry;
+import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
 
 /**
  * The implementation of the users catastrophe orgs remote service.
@@ -23,4 +38,5 @@ public class UsersCatastropheOrgsServiceImpl
      *
      * Never reference this interface directly. Always use {@link com.liferay.challenge.service.UsersCatastropheOrgsServiceUtil} to access the users catastrophe orgs remote service.
      */
+
 }

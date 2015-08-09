@@ -13,6 +13,8 @@ import com.liferay.portal.kernel.dao.orm.ProjectionFactoryUtil;
 import com.liferay.portal.kernel.dao.orm.ProjectionList;
 import com.liferay.portal.kernel.dao.orm.PropertyFactoryUtil;
 import com.liferay.portal.kernel.exception.SystemException;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.kernel.util.PortalClassLoaderUtil;
 import com.liferay.portlet.asset.model.AssetEntry;
 import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
@@ -51,6 +53,9 @@ public class UsersCatastropheOrgsLocalServiceImpl
 
 	@SuppressWarnings("rawtypes")
 	public List countOrganizationUsers(long organizationId) throws SystemException {
+
+		Log log = LogFactoryUtil.getLog("David");
+		log.debug("inside");
 
 		ProjectionList plist = ProjectionFactoryUtil.projectionList();
 		plist.add(ProjectionFactoryUtil.groupProperty("organizationId"));

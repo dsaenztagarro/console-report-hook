@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
+import com.liferay.challenge.service.UsersCatastropheOrgsServiceUtil;
 import com.liferay.challenge.util.ConsolePrinter;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -13,7 +14,7 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.model.Organization;
 import com.liferay.portal.service.OrganizationLocalServiceUtil;
 
-public class CatastropheReportCommandImpl implements CatastropheReportCommand {
+public class CatastropheReportCommandImpl {
 
 	public CatastropheReportCommandImpl() {
 
@@ -21,10 +22,11 @@ public class CatastropheReportCommandImpl implements CatastropheReportCommand {
 	}
 
 	public boolean run() {
-
+		_printer.print("run#begin");
 		try {
 			int organizationCount =
 				OrganizationLocalServiceUtil.getOrganizationsCount();
+			_printer.print("organizationCount: " + organizationCount);
 			List<Organization> organizations =
 				OrganizationLocalServiceUtil.getOrganizations(
 					0, organizationCount);
@@ -32,10 +34,12 @@ public class CatastropheReportCommandImpl implements CatastropheReportCommand {
 			Map<Long, Organization> map = new HashMap<Long, Organization>();
 			for (Organization org : organizations)
 				map.put(org.getOrganizationId(), org);
-
+			_printer.print("trace1");
 			List<Object[]> results =
 				UsersCatastropheOrgsLocalServiceUtil.countOrganizationUsers(1);
 
+
+			_printer.print("trace2");
 			for (Object[] r : results) {
 				long organizationId = (long) r[0];
 				long count = (long) r[1];

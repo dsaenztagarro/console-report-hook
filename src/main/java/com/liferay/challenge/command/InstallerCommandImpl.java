@@ -17,7 +17,7 @@ import com.liferay.portal.model.Organization;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 
-public class InstallerCommandImpl implements InstallerCommand {
+public class InstallerCommandImpl {
 
 	public void setPortletConfig(PortletConfig _portletConfig) {
 
