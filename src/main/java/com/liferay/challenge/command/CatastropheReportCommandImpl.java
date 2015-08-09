@@ -6,7 +6,9 @@ import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.PortletConfig;
+import javax.portlet.PortletContext;
 
+import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
 import com.liferay.challenge.strategy.LeafStrategy;
 import com.liferay.challenge.strategy.StrategyInterface;
 import com.liferay.challenge.util.MessageBuilder;
@@ -29,6 +31,11 @@ public class CatastropheReportCommandImpl {
 	public void setPortletConfig(PortletConfig _portletConfig) {
 
 		this._portletConfig = _portletConfig;
+	}
+
+	public void setPortletContext(PortletContext _portletContext) {
+
+		this._portletContext = _portletContext;
 	}
 
 	public String run() {
@@ -72,10 +79,14 @@ public class CatastropheReportCommandImpl {
 		List<Organization> organizations = user.getOrganizations();
 		long organizationId =
 			_strategy.chooseOneOf(organizations).getOrganizationId();
+
+		// UsersCatastropheOrgsLocalServiceUtil.updateUsersCatastropheOrgs(usersCatastropheOrgs)(user.getUserId(), organizationId);
+		// UsersCatastropheOrgsLocalServiceUtil.update
 		return organizationId;
 	}
 
 	private PortletConfig _portletConfig;
+	private PortletConfig _portletContext;
 	private ActionRequest _actionRequest;
 	private StrategyInterface _strategy;
 	private static Log _log =

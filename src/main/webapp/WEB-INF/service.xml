@@ -7,7 +7,7 @@
         <!-- PK fields -->
 
         <column name="userId" type="long" primary="true" />
-        <column name="organizationId" type="long" primary="true" />
+        <column name="organizationId" type="long" />
 
     </entity>
 </service-builder>

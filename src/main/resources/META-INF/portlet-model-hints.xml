@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.liferay.challenge.model.UsersCatastropheOrgs">
+		<field name="userId" type="long" />
+		<field name="organizationId" type="long" />
+	</model>
+</model-hints>
