@@ -2,17 +2,24 @@
 
 # liferay-challenge-hook
 
+
 Environment
 -----------
 
 - Liferay v6.2 CE Server (Tomcat 7)
 - maven 3.3.3
 - Liferay IDE: Eclipse Luna Release 4.4.0
+  Build id: 20140612-0600
 
-**Important!**
 
-In order to run server from IDE, remember to update `Liferay settings` with `User timezone:`
-An invalid config doesn't play well with JRebel in order to monitor changes! :(
+Book log
+--------
+- In order to run server from IDE, remember to update `Liferay settings` with `User timezone:`
+  An invalid config doesn't play well with JRebel in order to monitor changes! :(
+
+- Unable to select plugin project when creating service builder
+  Liferay IDE: IDE-1843 (Again?)
+  => Solved generating manually `service.xml` and running `mvn liferay:build-service`
 
 
 Running tests
@@ -71,16 +78,22 @@ Eclipse IDE config
 
 [Liferay IDE Java Code Style Formatter profile](http://www.liferay.com/es/community/wiki/-/wiki/Main/Liferay+IDE+Java+Code+Style+Formatter+profile/maximized)
 
+- Project -> Properties -> Project Facets
+
+  - Java: `1.7`
+
 - Preferences -> Maven -> Installations -> Add..
-  ```
-  Installation home: /usr/local/Cellar/maven/3.3.3/libexec
-  Installation name: maven-3.3.3
-  ```
+
+  - Installation home: `/usr/local/Cellar/maven/3.3.3/libexec`
+  - Installation name: `maven-3.3.3`
+
 - Preferences -> Maven -> User Settings
-  `/usr/local/Cellar/maven/3.3.3/libexec/conf/settings.xml`
+
+  - `/usr/local/Cellar/maven/3.3.3/libexec/conf/settings.xml`
 
 - Project -> Properties -> Maven -> Active Maven Profiles
-  `liferay-dev, jrebel`
+
+  - `liferay-dev, jrebel`
 
 - Project -> Build Automatically (checked)
 
