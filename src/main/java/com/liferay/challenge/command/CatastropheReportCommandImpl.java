@@ -13,7 +13,6 @@ import com.liferay.challenge.util.MessageBuilder;
 import com.liferay.challenge.util.Writer;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.kernel.language.LanguageUtil;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
 import com.liferay.portal.model.Organization;
@@ -30,10 +29,6 @@ public class CatastropheReportCommandImpl {
 	public void setPortletConfig(PortletConfig _portletConfig) {
 
 		this._portletConfig = _portletConfig;
-	}
-
-	public String langTest() {
-
 	}
 
 	public String run() {
