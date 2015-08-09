@@ -2,4 +2,5 @@ language: java
 jdk:
   - oraclejdk7
 
-script: "mvn clean install --settings conf/travis_settings.xml"
+install: "mvn clean install --settings conf/travis_settings.xml -DskipTests=true -Dmaven.javadoc.skip=true -B -V"
+script: "mvn test --settings conf/travis_settings.xml"
