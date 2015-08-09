@@ -6,7 +6,9 @@
 Environment
 -----------
 
+- Mac OS X 10.10.4
 - Liferay v6.2 CE Server (Tomcat 7)
+- mysql Ver 14.14 Distrib 5.6.25, for osx10.10 (x86_64) using  EditLine wrapper
 - maven 3.3.3
 - Liferay IDE: Eclipse Luna Release 4.4.0
   Build id: 20140612-0600
@@ -101,10 +103,13 @@ Documentation
 -------------
 
 - [Tips to improve usage of the liferay script console](http://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console)
+- [Database Views](http://www.liferay.com/es/community/wiki/-/wiki/Main/Working+with+Database+Views+in+Liferay)
+- [Upgrade Process](https://www.liferay.com/web/ryan.park/blog/-/blogs/implementing-upgradingprocess-for-your-liferay-portlets!)
 
 
 Pending Tasks
 -------------
 
 - [ ] Localization
-
+- [ ] Run installer script throw UpgradeProcess
+- [ ] Parallelization throw MessageBus
