@@ -268,6 +268,11 @@ public class UsersCatastropheOrgsLocalServiceUtil {
         return getService().updateUsersCatastropheOrgs(userId, organizationId);
     }
 
+    public static java.util.List countOrganizationUsers(long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().countOrganizationUsers(organizationId);
+    }
+
     public static void clearService() {
         _service = null;
     }

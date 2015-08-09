@@ -47,6 +47,8 @@ public class UsersCatastropheOrgsLocalServiceClp
     private String[] _methodParameterTypes17;
     private String _methodName19;
     private String[] _methodParameterTypes19;
+    private String _methodName20;
+    private String[] _methodParameterTypes20;
 
     public UsersCatastropheOrgsLocalServiceClp(
         InvokableLocalService invokableLocalService) {
@@ -145,6 +147,10 @@ public class UsersCatastropheOrgsLocalServiceClp
         _methodName19 = "updateUsersCatastropheOrgs";
 
         _methodParameterTypes19 = new String[] { "long", "long" };
+
+        _methodName20 = "countOrganizationUsers";
+
+        _methodParameterTypes20 = new String[] { "long" };
     }
 
     @Override
@@ -692,5 +698,31 @@ public class UsersCatastropheOrgsLocalServiceClp
         }
 
         return (com.liferay.challenge.model.UsersCatastropheOrgs) ClpSerializer.translateOutput(returnObj);
+    }
+
+    @Override
+    public java.util.List countOrganizationUsers(long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName20,
+                    _methodParameterTypes20, new Object[] { organizationId });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (java.util.List) ClpSerializer.translateOutput(returnObj);
     }
 }

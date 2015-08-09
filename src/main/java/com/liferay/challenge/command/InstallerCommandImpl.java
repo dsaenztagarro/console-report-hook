@@ -1,7 +1,6 @@
 
 package com.liferay.challenge.command;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.portlet.ActionRequest;
@@ -9,10 +8,7 @@ import javax.portlet.PortletConfig;
 
 import com.liferay.challenge.model.UsersCatastropheOrgs;
 import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
-import com.liferay.challenge.strategy.LeafStrategy;
 import com.liferay.challenge.strategy.StrategyInterface;
-import com.liferay.challenge.util.MessageBuilder;
-import com.liferay.challenge.util.ConsolePrinter;
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;
@@ -21,7 +17,7 @@ import com.liferay.portal.model.Organization;
 import com.liferay.portal.model.User;
 import com.liferay.portal.service.UserLocalServiceUtil;
 
-public class InstallerCommandImpl {
+public class InstallerCommandImpl implements InstallerCommand {
 
 	public void setPortletConfig(PortletConfig _portletConfig) {
 

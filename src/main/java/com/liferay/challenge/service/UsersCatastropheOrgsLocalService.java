@@ -243,4 +243,7 @@ public interface UsersCatastropheOrgsLocalService extends BaseLocalService,
     public com.liferay.challenge.model.UsersCatastropheOrgs updateUsersCatastropheOrgs(
         long userId, long organizationId)
         throws com.liferay.portal.kernel.exception.SystemException;
+
+    public java.util.List countOrganizationUsers(long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException;
 }

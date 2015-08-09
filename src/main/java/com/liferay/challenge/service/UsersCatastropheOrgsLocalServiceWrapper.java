@@ -285,6 +285,12 @@ public class UsersCatastropheOrgsLocalServiceWrapper
             organizationId);
     }
 
+    @Override
+    public java.util.List countOrganizationUsers(long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _usersCatastropheOrgsLocalService.countOrganizationUsers(organizationId);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

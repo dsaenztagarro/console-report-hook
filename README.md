@@ -23,6 +23,8 @@ Book log
   Liferay IDE: IDE-1843 (Again?)
   => Solved generating manually `service.xml` and running `mvn liferay:build-service`
 
+- Tunning memory args for fixing outOfMemoryErrors: `-Xms512m -Xmx512m -XX:MaxPermSize=256m`
+
 
 Running tests
 -------------
