@@ -45,7 +45,7 @@ all variables of `pom.xml`.
         <activeByDefault>true</activeByDefault>
     </activation>
     <properties>
-        <rebel.workspace.path>/Users/dst/Development/workspace_liferay</rebel.workspace.path>
+        <rebel.workspace.path>${user.home}/Development/workspace_liferay</rebel.workspace.path>
     </properties>
 </profile>
 
