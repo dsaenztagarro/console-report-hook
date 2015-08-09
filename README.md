@@ -1,21 +1,43 @@
-# script-utils-hook
+[![Build Status](https://travis-ci.org/dsaenztagarro/console-report-hook.svg)](https://travis-ci.org/dsaenztagarro/console-report-hook)
 
-# Environment
+# liferay-challenge-hook
 
+Environment
+-----------
+
+- Liferay v6.2 CE Server (Tomcat 7)
 - maven 3.3.3
 - Liferay IDE: Eclipse Luna Release 4.4.0
 
 **Important!**
 
 In order to run server from IDE, remember to update `Liferay settings` with `User timezone:`
-An invalid config doesn't play well with JRebel in order to monitor changes!
+An invalid config doesn't play well with JRebel in order to monitor changes! :(
 
-# Maven configuration
 
-Add a section like this to your maven `settings.xml` in order to initialize
-variables of `pom.xml`. 
+Running tests
+-------------
 
-```
+Execute `mvn test`
+
+
+Maven configuration
+-------------------
+
+Add these profiles to your maven `settings.xml` in order to initialize
+all variables of `pom.xml`. 
+
+```xml
+<profile>
+    <id>jrebel</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+        <rebel.workspace.path>/Users/dst/Development/workspace_liferay</rebel.workspace.path>
+    </properties>
+</profile>
+
 <profile>
     <id>liferay-dev</id>
     <activation>
@@ -43,7 +65,11 @@ search inside a path like this one, depending on you maven version:
 
 `/usr/local/Cellar/maven/3.3.3/libexec/conf/settings.xml`
 
-# Eclipse IDE config
+
+Eclipse IDE config
+------------------
+
+[Liferay IDE Java Code Style Formatter profile](http://www.liferay.com/es/community/wiki/-/wiki/Main/Liferay+IDE+Java+Code+Style+Formatter+profile/maximized)
 
 - Preferences -> Maven -> Installations -> Add..
   ```
@@ -53,9 +79,19 @@ search inside a path like this one, depending on you maven version:
 - Preferences -> Maven -> User Settings
   `/usr/local/Cellar/maven/3.3.3/libexec/conf/settings.xml`
 
-# Project config
-
 - Project -> Properties -> Maven -> Active Maven Profiles
-  `liferay-dev`
+  `liferay-dev, jrebel`
 
 - Project -> Build Automatically (checked)
+
+Documentation
+-------------
+
+- [Tips to improve usage of the liferay script console](http://www.liferay.com/web/sebastien.lemarchand/blog/-/blogs/5-tips-to-improve-usage-of-the-liferay-script-console)
+
+
+Pending Tasks
+-------------
+
+- [ ] Localization
+
