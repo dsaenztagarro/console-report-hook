@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
-import com.liferay.challenge.service.UsersCatastropheOrgsServiceUtil;
 import com.liferay.challenge.util.ConsolePrinter;
 import com.liferay.portal.kernel.exception.SystemException;
 import com.liferay.portal.kernel.log.Log;

@@ -1,4 +1,3 @@
-
 package com.liferay.challenge.service.impl;
 
 import java.util.List;
@@ -20,20 +19,21 @@ import com.liferay.portlet.asset.model.AssetEntry;
 import com.liferay.portlet.asset.service.AssetEntryLocalServiceUtil;
 
 /**
- * The implementation of the users catastrophe orgs local service. <p> All
- * custom service methods should be put in this class. Whenever methods are
- * added, rerun ServiceBuilder to copy their definitions into the
- * {@link com.liferay.challenge.service.UsersCatastropheOrgsLocalService}
- * interface. <p> This is a local service. Methods of this service will not have
- * security checks based on the propagated JAAS credentials because this service
- * can only be accessed from within the same VM. </p>
+ * The implementation of the users catastrophe orgs local service.
+ *
+ * <p>
+ * All custom service methods should be put in this class. Whenever methods are added, rerun ServiceBuilder to copy their definitions into the {@link com.liferay.challenge.service.UsersCatastropheOrgsLocalService} interface.
+ *
+ * <p>
+ * This is a local service. Methods of this service will not have security checks based on the propagated JAAS credentials because this service can only be accessed from within the same VM.
+ * </p>
  *
  * @author Brian Wing Shun Chan
  * @see com.liferay.challenge.service.base.UsersCatastropheOrgsLocalServiceBaseImpl
  * @see com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil
  */
 public class UsersCatastropheOrgsLocalServiceImpl
-	extends UsersCatastropheOrgsLocalServiceBaseImpl {
+    extends UsersCatastropheOrgsLocalServiceBaseImpl {
 
 	/*
 	 * (non-Javadoc)
@@ -66,12 +66,11 @@ public class UsersCatastropheOrgsLocalServiceImpl
 				UsersCatastropheOrgs.class,
 				PortalClassLoaderUtil.getClassLoader()).setProjection(plist).addOrder(
 				OrderFactoryUtil.desc("_count"));
-		
+
 		DynamicQuery query = DynamicQueryFactoryUtil.forClass(AssetEntry.class, PortalClassLoaderUtil.getClassLoader())
 						 .add(PropertyFactoryUtil.forName("organizationId").in(querySub));
-		
+
 		List results = AssetEntryLocalServiceUtil.dynamicQuery(query);
 		return results;
 	}
-
 }

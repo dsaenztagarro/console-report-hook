@@ -115,3 +115,55 @@ Pending Tasks
 - [ ] Localization
 - [ ] Run installer script throw UpgradeProcess
 - [ ] Parallelization throw MessageBus
+
+
+Problems
+--------
+
+- Unable to solve problem. See log entry:
+
+<pre>
+1:02:47,089 INFO  [http-bio-8080-exec-19][David:11] run#begin
+21:02:47,093 INFO  [http-bio-8080-exec-19][David:11] organizationCount: 2
+21:02:47,099 INFO  [http-bio-8080-exec-19][David:11] trace1
+21:02:47,103 ERROR [http-bio-8080-exec-19][PortletBeanLocatorUtil:42] BeanLocator is null for servlet context script-utils
+21:02:47,104 ERROR [http-bio-8080-exec-19][EditServerAction:523] SanitizerLogWrapper warning: Following message contains CRLF characters
+BeanLocator has not been set for servlet context script-utils
+Line 1: command = com.liferay.portal.kernel.bean.PortletBeanLocatorUtil.locate("script-utils-1.0.0-SNAPSHOT", "com.liferay.challenge.command.CatastropheReportCommand")
+Line 2: 
+Line 3: success = command.run()
+Line 4: 
+Line 5: if (success) {
+Line 6: 	out.println("Success!")
+Line 7: } else {
+Line 8: 	out.println("Error!")
+Line 9: }
+</pre>
+
+Details implementation
+----------------------
+
+In order to run report with high performance from script admin console, it was
+intended to create previously a table `UsersCatastropheOrgs` to provide a unique
+relation between a user and an organization since a user can belong to multiple 
+organizations.
+
+It was required a `Strategy` pattern to choose the organization the user is going
+to belong to once a catastrophe take place ` to provide a unique
+relation between a user and an organization since a user can belong to multiple 
+organizations.
+
+It is not implemented, but it is clear that it is required to override some methods
+from `UserLocalServiceUtil` to update state in `UsersCatastropheOrgs` every time
+there is a change related to organizations of a user.
+
+
+Installation 
+------------
+
+As the implementation is not finished you should take this as a reference.
+
+Once the hook plugin is deployed, you should run (hipothetically) the script
+`installer.groovy` in order to populate with data the `UsersCatastrophe` table.
+
+That's all! Supposed there is a catastrophe run and execute the script `report.groovy`.
