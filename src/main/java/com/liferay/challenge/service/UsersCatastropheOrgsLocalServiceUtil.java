@@ -262,6 +262,12 @@ public class UsersCatastropheOrgsLocalServiceUtil {
         return getService().invokeMethod(name, parameterTypes, arguments);
     }
 
+    public static com.liferay.challenge.model.UsersCatastropheOrgs updateUsersCatastropheOrgs(
+        long userId, long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return getService().updateUsersCatastropheOrgs(userId, organizationId);
+    }
+
     public static void clearService() {
         _service = null;
     }

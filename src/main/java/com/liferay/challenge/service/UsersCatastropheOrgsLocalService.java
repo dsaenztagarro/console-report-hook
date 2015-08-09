@@ -239,4 +239,8 @@ public interface UsersCatastropheOrgsLocalService extends BaseLocalService,
     public java.lang.Object invokeMethod(java.lang.String name,
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable;
+
+    public com.liferay.challenge.model.UsersCatastropheOrgs updateUsersCatastropheOrgs(
+        long userId, long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException;
 }

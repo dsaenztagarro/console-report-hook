@@ -1,12 +1,10 @@
 
 package com.liferay.challenge.service.impl;
 
-import com.liferay.challenge.NoSuchUsersCatastropheOrgsException;
 import com.liferay.challenge.model.UsersCatastropheOrgs;
 import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
 import com.liferay.challenge.service.base.UsersCatastropheOrgsLocalServiceBaseImpl;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.service.ServiceContext;
 
 /**
  * The implementation of the users catastrophe orgs local service. <p> All
@@ -24,6 +22,9 @@ import com.liferay.portal.service.ServiceContext;
 public class UsersCatastropheOrgsLocalServiceImpl
 	extends UsersCatastropheOrgsLocalServiceBaseImpl {
 
+	/* (non-Javadoc)
+	 * @see com.liferay.challenge.service.UsersCatastropheOrgsLocalService#updateUsersCatastropheOrgs(long, long)
+	 */
 	public UsersCatastropheOrgs updateUsersCatastropheOrgs(
 		long userId, long organizationId)
 		throws SystemException {

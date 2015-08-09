@@ -45,6 +45,8 @@ public class UsersCatastropheOrgsLocalServiceClp
     private String[] _methodParameterTypes16;
     private String _methodName17;
     private String[] _methodParameterTypes17;
+    private String _methodName19;
+    private String[] _methodParameterTypes19;
 
     public UsersCatastropheOrgsLocalServiceClp(
         InvokableLocalService invokableLocalService) {
@@ -139,6 +141,10 @@ public class UsersCatastropheOrgsLocalServiceClp
         _methodName17 = "setBeanIdentifier";
 
         _methodParameterTypes17 = new String[] { "java.lang.String" };
+
+        _methodName19 = "updateUsersCatastropheOrgs";
+
+        _methodParameterTypes19 = new String[] { "long", "long" };
     }
 
     @Override
@@ -658,5 +664,33 @@ public class UsersCatastropheOrgsLocalServiceClp
         java.lang.String[] parameterTypes, java.lang.Object[] arguments)
         throws java.lang.Throwable {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public com.liferay.challenge.model.UsersCatastropheOrgs updateUsersCatastropheOrgs(
+        long userId, long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        Object returnObj = null;
+
+        try {
+            returnObj = _invokableLocalService.invokeMethod(_methodName19,
+                    _methodParameterTypes19,
+                    new Object[] { userId, organizationId });
+        } catch (Throwable t) {
+            t = ClpSerializer.translateThrowable(t);
+
+            if (t instanceof com.liferay.portal.kernel.exception.SystemException) {
+                throw (com.liferay.portal.kernel.exception.SystemException) t;
+            }
+
+            if (t instanceof RuntimeException) {
+                throw (RuntimeException) t;
+            } else {
+                throw new RuntimeException(t.getClass().getName() +
+                    " is not a valid exception");
+            }
+        }
+
+        return (com.liferay.challenge.model.UsersCatastropheOrgs) ClpSerializer.translateOutput(returnObj);
     }
 }

@@ -277,6 +277,14 @@ public class UsersCatastropheOrgsLocalServiceWrapper
             parameterTypes, arguments);
     }
 
+    @Override
+    public com.liferay.challenge.model.UsersCatastropheOrgs updateUsersCatastropheOrgs(
+        long userId, long organizationId)
+        throws com.liferay.portal.kernel.exception.SystemException {
+        return _usersCatastropheOrgsLocalService.updateUsersCatastropheOrgs(userId,
+            organizationId);
+    }
+
     /**
      * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
      */

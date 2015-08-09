@@ -6,8 +6,8 @@ import java.util.List;
 
 import javax.portlet.ActionRequest;
 import javax.portlet.PortletConfig;
-import javax.portlet.PortletContext;
 
+import com.liferay.challenge.model.UsersCatastropheOrgs;
 import com.liferay.challenge.service.UsersCatastropheOrgsLocalServiceUtil;
 import com.liferay.challenge.strategy.LeafStrategy;
 import com.liferay.challenge.strategy.StrategyInterface;
@@ -33,11 +33,6 @@ public class CatastropheReportCommandImpl {
 		this._portletConfig = _portletConfig;
 	}
 
-	public void setPortletContext(PortletContext _portletContext) {
-
-		this._portletContext = _portletContext;
-	}
-
 	public String run() {
 
 		try {
@@ -47,8 +42,8 @@ public class CatastropheReportCommandImpl {
 			int userCount = UserLocalServiceUtil.getUsersCount();
 			List<User> users = UserLocalServiceUtil.getUsers(0, userCount);
 			for (User user : users) {
-				long organizationId = processUser(user);
-				System.out.println(organizationId);
+				UsersCatastropheOrgs model = processUser(user);
+				System.out.println(model.getOrganizationId());
 			}
 
 			Writer writer = new Writer();
@@ -56,9 +51,6 @@ public class CatastropheReportCommandImpl {
 			ArrayList<Integer> divisibleValues = new ArrayList<Integer>();
 			divisibleValues.add(3);
 			divisibleValues.add(5);
-
-			// MessageBuilder messageBuilder = new
-			// MessageBuilder(_portletConfig);
 
 			String message =
 				MessageBuilder.build("Liferay Inc.", divisibleValues);
@@ -72,7 +64,7 @@ public class CatastropheReportCommandImpl {
 		}
 	}
 
-	private long processUser(User user)
+	private UsersCatastropheOrgs processUser(User user)
 		throws PortalException, SystemException {
 
 		_log.debug("User Name: " + user.getFullName());
@@ -80,13 +72,10 @@ public class CatastropheReportCommandImpl {
 		long organizationId =
 			_strategy.chooseOneOf(organizations).getOrganizationId();
 
-		// UsersCatastropheOrgsLocalServiceUtil.updateUsersCatastropheOrgs(usersCatastropheOrgs)(user.getUserId(), organizationId);
-		// UsersCatastropheOrgsLocalServiceUtil.update
-		return organizationId;
+		return UsersCatastropheOrgsLocalServiceUtil.updateUsersCatastropheOrgs(user.getUserId(), organizationId);
 	}
 
 	private PortletConfig _portletConfig;
-	private PortletConfig _portletContext;
 	private ActionRequest _actionRequest;
 	private StrategyInterface _strategy;
 	private static Log _log =
