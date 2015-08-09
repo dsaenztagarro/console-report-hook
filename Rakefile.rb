@@ -8,9 +8,16 @@ task :package => :clean do
   sh 'mvn package'
 end
 
-desc 'Deploy Liferay plugin'
-task :deploy => :package do
-  sh 'mvn liferay:deploy'
+namespace :liferay do
+  desc 'Deploy Liferay plugin'
+  task :deploy do
+    sh 'mvn liferay:deploy'
+  end
+
+  desc 'Build service'
+  task :build-service do
+    sh 'mvn liferay:build-service'
+  end
 end
 
 namespace :log do
